@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @products = Product.where(buyer_id: nil, user_id:current_user)
+    @products = Product.where(user_id:current_user.id).where(buyer_id:0)
+    @sold = Product.where(user_id: current_user).where.not(buyer_id:0)
     @purchased = Product.where(buyer_id:current_user)
-    @sold = Product.where.not(buyer_id: current_user)
   end
 
 

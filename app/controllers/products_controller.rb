@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     # @products = Product.all
-    @products = Product.where.not(user_id:current_user)
+    @products = Product.where.not(user_id:current_user).where(buyer_id:0)
     # @products = Product.where.not(buyer_id == current_user)
   end
 
