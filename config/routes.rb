@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#create', as: 'new_login'
   post 'login' => 'sessions#new', as: 'login'
   delete 'logout' => 'sessions#destroy', as: 'logout'
+  
   resources :users
   resources :products
 
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
 #              DELETE /users/:id(.:format)         users#destroy
 #     products GET    /products(.:format)          products#index <----------
 #              POST   /products(.:format)          products#create <----------
-#  new_product GET    /products/new(.:format)      products#new
+#  new_product GET    /products/new(.:format)      products#new <----------test
 # edit_product GET    /products/:id/edit(.:format) products#edit
 #      product GET    /products/:id(.:format)      products#show 
 #              PATCH  /products/:id(.:format)      products#update <----------
